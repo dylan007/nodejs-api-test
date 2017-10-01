@@ -3,14 +3,7 @@ const bodyparser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
 const port = process.env.PORT || 3000;
-
-
-const con = mysql.createConnection({
-	host:"localhost",
-	user:"",
-	password:"",
-	database:"testdb"
-});
+const con = require('./config/database.js');
 
 con.connect(function(err){
 	if(err) throw err;
