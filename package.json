@@ -1,0 +1,21 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Basic crud api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "curd",
+    "api"
+  ],
+  "author": "Shounak Dey",
+  "license": "ISC",
+  "dependencies":{
+    "express":"*",
+    "mysql":"*",
+    "body-parser":"*",
+    "url":"*"
+  }
+}
