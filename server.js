@@ -4,8 +4,21 @@ const mysql = require('mysql');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const index = require('./routes/index.js');
-const attendance = require('./routes/attendance.js');
+
+const con = mysql.createConnection({
+	host:"localhost",
+	user:"",
+	password:"",
+	database:"testdb"
+});
+
+con.connect(function(err){
+	if(err) throw err;
+	console.log("Connected to the database");
+});
+
+const index = require('./routes/index.js')(con);
+const attendance = require('./routes/attendance.js')(con);
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true })); 
